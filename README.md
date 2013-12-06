@@ -8,6 +8,8 @@ Help.js は、開発者向けのオンラインヘルプ機能を提供します
 - オンラインヘルプへのリンクを提供します
     - GitHub の Wiki ページへのリンクを表示します
     - または Google I'm Feeling Lucky へのリンクを提供します
+- global.Help オブジェクトを定義します
+- Function.prototype.help メソッドを定義します
 
 # クイックヘルプ
 
@@ -86,10 +88,8 @@ Help.js のオンラインヘルプ機能に対応するには、以下のよう
 
 ```md
 # Postal#register
-register the object for message delivery.
+`Postal#register の説明をここに`
 
-# Postal#to
-set delivery objects.
 ```
 
 - 各メソッドに `@help: クラス名#メソッド名` 属性をコメントで追加していきます。
@@ -101,18 +101,7 @@ function register(receiver) { // @arg ReceiverObject:
                               // @throw: Error("Object has not inbox function.")
                               // @desc: register the object for message delivery.
                               // @help: Postal#register
-    _validate(receiver);
-    if ( !getID(receiver) ) {
-        var id = (++_counter).toString();
-
-        if (Object.defineProperty) { // ES5 ready
-            Object.defineProperty(receiver, "__POSTAL_ID__", { value: id }); // hidden and shield
-        } else { // legacy
-            receiver.__POSTAL_ID__ = id;
-        }
-        this._receiverMap[id] = receiver;
-    }
-    return this;
+    ...
 }
 ```
 
