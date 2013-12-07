@@ -1,109 +1,65 @@
 Help.js
 =======
 
-Help.js は、開発者向けのオンラインヘルプ機能を提供します。
+Help.js は、関数のソースコードをダンプし、ページへのリンクを表示します。
 
-- Chrome DevTools のコンソールでメソッドのソースコードをダンプします
-    - 引数や戻り値を素早く確認できます
-- オンラインヘルプへのリンクを提供します
-    - GitHub の Wiki ページへのリンクを表示します
-    - または Google I'm Feeling Lucky へのリンクを提供します
-- global.Help オブジェクトを定義します
-- Function.prototype.help メソッドを定義します
+DevTools のコンソール上で、Help(functionName:Function/String) をタイプすることで、
 
-# クイックヘルプ
+- 関数のソースコードを表示します
+- GitHub の Wiki ページ または Google 検索ページリンクを表示し、クリックでWebページを直接開きます
+    - 一部ブラウザでは機能しません
 
-クイックヘルプは、Chrome DevTools のコンソールで、  
-`オブジェクト.help()` とタイプすることでソースコードとクリック可能なURLを表示する機能です。
-
-```sh
-> Postal.prototype.register.help()
+```js
+// 以下は全て同じ結果になります
+> Help(Postal.prototype.register)
+> Help("Postal.prototype.register")
+> Help("Postal#register")
 
 https://github.com/uupaa/postal.js/wiki/Postal#postalregister
 
 function register(receiver) { // @arg ReceiverObject:
                               // @ret this:
-                              // @throw: Error("Object has not inbox function.")
                               // @desc: register the object for message delivery.
                               // @help: Postal#register
-    _validate(receiver);
-    if ( !getID(receiver) ) {
-        var id = (++_counter).toString();
+    ;
+}
 
-        if (Object.defineProperty) { // ES5 ready
-            Object.defineProperty(receiver, "__POSTAL_ID__", { value: id }); // hidden and shield
-        } else { // legacy
-            receiver.__POSTAL_ID__ = id;
-        }
-        this._receiverMap[id] = receiver;
+https://github.com/uupaa/postal.js/wiki/Postal#postalregister
+```
+
+# 自作ライブラリを Help.js に対応させる
+
+GitHub にホストしている自作ライブラリ(例: Hoge.js)を Help.js に対応させる方法を説明します。
+
+1.  Hoge.repository = `GitHubのリポジトリURL` を追加します。
+
+    ```js
+    Hoge.repository = "https://github.com/uupaa/hoge.js";
+    ```
+
+2.  wiki ページ( https://github.com/uupaa/hoge.js/wiki/Hoge )を作成します。
+
+3.  wiki/Hoge ページに API の説明を追加します。  
+    prototype は "#" で省略表記します(例: Hoge.prototype.method → Hoge#method)
+
+    ```wiki
+    # Hoge#method    
+    Hoge#method(arg1:String, arg2:Boolean = false):this は…
+    ```
+
+4.  Hoge.js の Hoge#method に `@help: Hoge#method` 属性をコメントで追加していきます。  
+    同時に引数や戻り値などの属性を追加するとよいでしょう。
+
+    ```js
+    function method(arg1,   // @arg String: arg1 description
+                    arg2) { // @arg Boolean(= false): arg2 description
+                            // @ret this: return value
+                            // @desc: hoge method description
+                            // @help: Hoge#method
+            :
+        return this;
     }
-    return this;
-}
+    ```
 
-https://github.com/uupaa/postal.js/wiki/Postal#postalregister
-```
-
-Help(`object`) でも同様の結果になります。
-
-```sh
-> Help((new Postal()).register)
-
-https://github.com/uupaa/postal.js/wiki/Postal#postal
-
-  ...
-
-
-https://github.com/uupaa/postal.js/wiki/Postal#postal
-```
-
-# オンラインヘルプ
-
-クイックヘルプで表示したソースコードの上下には、クリック可能なURLが付属しています。
-
-このURLをクリックすると、そのクラス/メソッドの使い方を説明したページが開きます。
-これをオンラインヘルプ機能と呼びます。
-
-- `Object`.repository が設定されている場合は、repository の wiki ページを表示します
-- repository が設定されていない場合は、Google で検索します
-
-## 自作ライブラリを Help.js のオンラインヘルプ機能に対応させる
-
-Help.js のオンラインヘルプ機能に対応するには、以下のようにします。
-
-`Object`.repository に GitHub のリポジトリURLを設定します。
-
-```js
-+ Hoge.repository = "https://github.com/uupaa/hoge.js";
-```
-
-`Object` 名を付けた wiki ページを作成します
-
-```
-  https://github.com/uupaa/postal.js/wiki/Postal ページを作成
-```
-
-- 作成した wiki ページに API の説明を追加していきます
-    - メソッドは `"#"` で省略表記します
-    - 例: Postal.prototype.register は Postal#register とします
-
-```md
-# Postal#register
-`Postal#register の説明をここに`
-
-```
-
-- 各メソッドに `@help: クラス名#メソッド名` 属性をコメントで追加していきます。
-
-```js
-
-function register(receiver) { // @arg ReceiverObject:
-                              // @ret this:
-                              // @throw: Error("Object has not inbox function.")
-                              // @desc: register the object for message delivery.
-                              // @help: Postal#register
-    ...
-}
-```
-
-以上で、オンラインヘルプが利用可能になります。
+以上です。
 
