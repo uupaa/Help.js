@@ -1,6 +1,6 @@
 {
   "name":           "uupaa.help.js",
-  "version":        "1.0.0",
+  "version":        "1.0.1",
   "description":    "Function Help utility.",
   "url":            "https://github.com/uupaa/Help.js",
   "keywords":       ["help", "document", "devtools", "util", "uupaa"],
