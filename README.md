@@ -1,7 +1,7 @@
 Help.js
 =======
 
-Help.js is new online help system.
+Help.js is new online help command.
 
 # API Document
 

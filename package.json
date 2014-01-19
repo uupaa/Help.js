@@ -1,7 +1,7 @@
 {
   "name":           "uupaa.help.js",
-  "version":        "0.8.2",
-  "description":    "Function Help utility.",
+  "version":        "0.8.3",
+  "description":    "New online help command.",
   "url":            "https://github.com/uupaa/Help.js",
   "keywords":       ["help", "document", "devtools", "util", "uupaa"],
   "author":         "uupaa <uupaa.js@gmail.com>",
