@@ -1,18 +1,20 @@
 {
   "name":           "uupaa.help.js",
-  "version":        "0.8.4",
+  "version":        "0.8.5",
   "description":    "New online help command.",
   "url":            "https://github.com/uupaa/Help.js",
   "keywords":       ["help", "document", "devtools", "util", "uupaa"],
+  "repository": {
+    "type":         "git",
+    "url":          "https://github.com/uupaa/Help.js.git"
+  },
+  "scripts": {
+    "test":         "NODE_ENV=production NODE_PATH=lib node --harmony test/index.node.js; open test/index.html"
+  },
+  "lib":            "./lib/",
+  "main":           "./index.js",
   "author":         "uupaa <uupaa.js@gmail.com>",
   "license":        "MIT",
-  "repository":     { "type": "git", "url": "https://github.com/uupaa/Help.js.git" },
-  "contributors":   [],
-  "lib":            "./lib/",
-  "main":           "index.js",
-  "scripts": {
-    "start":        "npm install",
-    "test":         "NODE_ENV=production NODE_PATH=lib node --harmony test/index.node.js; open test/index.html"
-  }
+  "contributors":   []
 }
 

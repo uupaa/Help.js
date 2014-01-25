@@ -18,7 +18,4 @@ $ cd Help.js
 
 ```sh
 $ npm test
-
-    > uupaa.help.js@0.8.0 test /Users/username/path/help.js
-    > NODE_ENV=production NODE_PATH=lib node --harmony test/index.node.js; open test/index.html
 ```
