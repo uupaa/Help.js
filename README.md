@@ -14,8 +14,9 @@ $ git clone git@github.com:uupaa/Help.js.git
 $ cd Help.js
 ```
 
-# Try
+# Test
 
 ```sh
 $ npm test
 ```
+
