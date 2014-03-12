@@ -1,7 +1,7 @@
 {
   "name":           "uupaa.help.js",
-  "version":        "0.8.9",
-  "description":    "New online help command.",
+  "version":        "0.8.10",
+  "description":    "Online help.",
   "url":            "https://github.com/uupaa/Help.js",
   "keywords":       ["help", "document", "devtools", "util", "uupaa"],
   "repository": {
@@ -9,7 +9,22 @@
     "url":          "https://github.com/uupaa/Help.js.git"
   },
   "scripts": {
-    "test":         "NODE_ENV=production NODE_PATH=lib node --harmony test/index.node.js; open test/index.html"
+    "watch":        "node node_modules/uupaa.watch.js --verbose --action build ./lib/Help.js",
+    "build":        "node node_modules/uupaa.minify.js --keep --option 'formatting pretty_print' --output ./lib/Help.min.js ./lib/Help.js",
+    "build-release":"node node_modules/uupaa.minify.js --module all --output ./lib/Help.min.js",
+    "test":         "NODE_ENV=production NODE_PATH=lib node --harmony test/index.node.js; open test/index.html",
+    "lint":         "plato --title Help.js --jshint .jshintrc -d lint/plato lib/Help.js; open lint/plato/index.html"
+  },
+  "build": {
+    "all": { "lib/Help.js": "" },
+    "node": { },
+    "worker": { },
+    "browser": { }
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "uupaa.minify.js":  ""
   },
   "lib":            "./lib/",
   "main":           "./index.js",
