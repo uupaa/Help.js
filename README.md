@@ -1,7 +1,7 @@
 Help.js
 =======
 
-Online help.
+Online reference.
 
 # Document
 
