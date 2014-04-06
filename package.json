@@ -1,6 +1,6 @@
 {
   "name":           "uupaa.help.js",
-  "version":        "0.8.15",
+  "version":        "0.8.16",
   "description":    "Online reference.",
   "url":            "https://github.com/uupaa/Help.js",
   "keywords":       ["help", "document", "devtools", "util", "uupaa", "WebModule"],
