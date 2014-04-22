@@ -1,0 +1,48 @@
+{
+  "name": {
+    "git": "Help.js",
+    "npm": "uupaa.help.js"
+  },
+  "build": {
+    "files": [
+      "lib/Help.js"
+    ],
+    "output": "release/Help.min.js",
+    "target": [
+      "Browser"
+    ]
+  },
+  "moduleTargets": {
+    "uupaa.console.js": [
+      "Worker"
+    ],
+    "uupaa.valid.js": [
+      "Browser",
+      "Worker",
+      "Node"
+    ],
+    "uupaa.minify.js": []
+  },
+  "dependenciesFiles": [],
+  "dependenciesModules": [],
+  "devDependenciesFiles": [
+    "node_modules/uupaa.console.js/lib/Console.js",
+    "node_modules/uupaa.valid.js/lib/Valid.js",
+    "node_modules/uupaa.help.js/lib/Help.js",
+    "node_modules/uupaa.task.js/lib/Task.js",
+    "node_modules/uupaa.test.js/lib/Test.js",
+    "node_modules/uupaa.watch.js/lib/Watch.js",
+    "node_modules/uupaa.plato.js/lib/Plato.js",
+    "node_modules/uupaa.minify.js/lib/Minify.js"
+  ],
+  "devDependenciesModules": [
+    "uupaa.console.js",
+    "uupaa.valid.js",
+    "uupaa.help.js",
+    "uupaa.task.js",
+    "uupaa.test.js",
+    "uupaa.watch.js",
+    "uupaa.plato.js",
+    "uupaa.minify.js"
+  ]
+}
