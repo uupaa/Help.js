@@ -21,6 +21,13 @@
       "Worker",
       "Node"
     ],
+    "uupaa.task.js": [
+      "Browser",
+      "Worker",
+      "Node"
+    ],
+    "uupaa.watch.js": [],
+    "uupaa.plato.js": [],
     "uupaa.minify.js": []
   },
   "dependenciesFiles": [],
