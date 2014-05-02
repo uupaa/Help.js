@@ -1,6 +1,6 @@
 {
   "name":           "uupaa.help.js",
-  "version":        "0.8.26",
+  "version":        "0.8.27",
   "description":    "Online reference.",
   "url":            "https://github.com/uupaa/Help.js",
   "keywords":       ["help", "document", "devtools", "util", "uupaa", "WebModule"],
@@ -13,7 +13,7 @@
     "build":        "node node_modules/uupaa.minify.js --verbose --strict --keep --pretty",
     "build-simple": "node node_modules/uupaa.minify.js --verbose --strict --keep --pretty --nowrap --simple",
     "build-release":"node node_modules/uupaa.minify.js --verbose --strict --module",
-    "test":         "npm run test-node; npm run test-browser",
+    "test":         "npm run test-browser",
     "test-page":    "",
     "test-debug":   "",
     "test-node":    "",
