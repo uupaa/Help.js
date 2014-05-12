@@ -1,6 +1,6 @@
 {
   "name":           "uupaa.help.js",
-  "version":        "0.9.2",
+  "version":        "0.9.3",
   "description":    "Online reference.",
   "url":            "https://github.com/uupaa/Help.js",
   "keywords":       ["help", "document", "devtools", "util", "uupaa", "WebModule"],
@@ -23,7 +23,7 @@
   "x-build": {
     "files":        ["lib/Help.js"],
     "output":       "release/Help.min.js",
-    "target":       ["Browser"],
+    "target":       ["Browser", "Node"],
     "module": {
       "develop":    [],
       "release":    []
