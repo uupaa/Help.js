@@ -1,6 +1,6 @@
 {
   "name":           "uupaa.help.js",
-  "version":        "0.9.3",
+  "version":        "0.9.4",
   "description":    "Online reference.",
   "url":            "https://github.com/uupaa/Help.js",
   "keywords":       ["help", "document", "devtools", "util", "uupaa", "WebModule"],
@@ -13,10 +13,10 @@
     "build":        "node node_modules/uupaa.minify.js --verbose --strict --keep --pretty",
     "build-simple": "node node_modules/uupaa.minify.js --verbose --strict --keep --pretty --nowrap --simple",
     "build-release":"node node_modules/uupaa.minify.js --verbose --strict --module",
-    "test":         "npm run test-browser",
-    "test-page":    "",
-    "test-debug":   "",
-    "test-node":    "",
+    "test":         "npm run test-node; npm run test-browser",
+    "test-page":    "node node_modules/uupaa.test.js/bin/TestPage.js --verbose",
+    "test-debug":   "NODE_ENV=production NODE_PATH=lib node --debug-brk --harmony test/index.node.js",
+    "test-node":    "NODE_ENV=production NODE_PATH=lib node --harmony test/index.node.js",
     "test-browser": "open test/index.html",
     "lint":         "node node_modules/uupaa.plato.js; open lint/plato/index.html"
   },
@@ -24,16 +24,18 @@
     "files":        ["lib/Help.js"],
     "output":       "release/Help.min.js",
     "target":       ["Browser", "Node"],
+    "labels":       ["@dev"],
     "module": {
-      "develop":    [],
+      "develop":    ["uupaa.reflection.js", "uupaa.console.js"],
       "release":    []
     }
   },
   "dependencies": {
+    "uupaa.reflection.js": "",
+    "uupaa.console.js": ""
   },
   "devDependencies": {
     "uupaa.nodemodule.js": "",
-    "uupaa.console.js": "",
     "uupaa.valid.js":   "",
     "uupaa.task.js":    "",
     "uupaa.test.js":    "",

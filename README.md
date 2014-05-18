@@ -18,7 +18,6 @@ Online reference.
 ```js
 <script src="lib/Help.js">
 <script>
-// for Browser
-console.log( Help("Array.isArray") );
+Help("Array.isArray");
 </script>
 ```
