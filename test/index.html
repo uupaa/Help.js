@@ -6,7 +6,14 @@
 onmessage = function(event) {
     self.MESSAGE = event.data;
 
-    
+    importScripts(MESSAGE.BASE_DIR + "../node_modules/uupaa.console.js/lib/Console.js");
+    importScripts(MESSAGE.BASE_DIR + "../node_modules/uupaa.reflection.js/lib/Reflection.js");
+    importScripts(MESSAGE.BASE_DIR + "../node_modules/uupaa.valid.js/lib/Valid.js");
+    importScripts(MESSAGE.BASE_DIR + "../lib/Help.js");
+    importScripts(MESSAGE.BASE_DIR + "../node_modules/uupaa.task.js/lib/Task.js");
+    importScripts(MESSAGE.BASE_DIR + "../node_modules/uupaa.test.js/lib/Test.js");
+    importScripts(MESSAGE.BASE_DIR + "../release/Help.min.js");
+    importScripts(MESSAGE.BASE_DIR + "./test.js");
 
     self.postMessage({ error: self.errorMessage || "" });
 };
