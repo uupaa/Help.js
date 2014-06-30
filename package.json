@@ -1,6 +1,6 @@
 {
   "name":           "uupaa.help.js",
-  "version":        "0.10.2",
+  "version":        "0.10.3",
   "description":    "Online reference.",
   "url":            "https://github.com/uupaa/Help.js",
   "keywords":       ["help", "document", "devtools", "util", "uupaa", "WebModule"],
@@ -21,21 +21,21 @@
     "lint":         "node node_modules/uupaa.plato.js; open lint/plato/index.html"
   },
   "x-build": {
-    "files":        ["lib/Help.js"],
+    "source":       ["lib/Help.js"],
     "output":       "release/Help.min.js",
     "target":       ["all"],
-    "labels":       ["@dev"],
+    "label":        ["@dev"],
     "module": {
       "develop":    ["uupaa.reflection.js", "uupaa.console.js"],
       "release":    []
     }
   },
   "dependencies": {
-    "uupaa.reflection.js": "",
-    "uupaa.console.js": ""
   },
   "devDependencies": {
     "uupaa.nodemodule.js": "",
+    "uupaa.reflection.js": "",
+    "uupaa.console.js": "",
     "uupaa.valid.js":   "",
     "uupaa.task.js":    "",
     "uupaa.test.js":    "",
