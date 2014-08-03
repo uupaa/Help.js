@@ -1,9 +1,9 @@
 {
   "name":           "uupaa.help.js",
-  "version":        "0.10.4",
+  "version":        "0.10.5",
   "description":    "Online reference.",
   "url":            "https://github.com/uupaa/Help.js",
-  "keywords":       ["help", "document", "devtools", "util", "uupaa", "WebModule"],
+  "keywords":       ["help", "document", "devtools", "util", "uupaa", "WebModule", "Unstable"],
   "repository": {
     "type":         "git",
     "url":          "https://github.com/uupaa/Help.js.git"
